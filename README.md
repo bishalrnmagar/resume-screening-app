@@ -24,4 +24,18 @@ Learning
     pip install -r requirements.txt
     ```
 
-...
+3. Running Jupyter Notebook:
+
+    ```bash
+    jupyter notebook
+    ```
+
+4. Run all codes in Jupyter Notebook:
+
+5. Run Streamlit application
+
+    ```bash
+    streamlit run app.py
+    ```
+    boom http://localhost:8501
+
