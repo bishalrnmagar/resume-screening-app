@@ -23,7 +23,7 @@ def clean_data(raw_txt: str) -> str:
     return clean_text
 
 def main():
-    st.title("Resume Screener")
+    st.title("Welcome to Resume Screener App")
     upload_file = st.file_uploader('Upload Resume', type=['txt','pdf'])
 
     if upload_file is not None:
@@ -36,7 +36,7 @@ def main():
         cleaned_data = clean_data(resume_data)
         input_features = tfidf.transform([cleaned_data])
         prediction_id = clf.predict(input_features)[0]
-        st.write(prediction_id)
+        # st.write(prediction_id)
 
         category_mapping = {
             15: "Java Developer",
@@ -67,6 +67,8 @@ def main():
         }
 
         category_name = category_mapping.get(prediction_id, "Unknown")
+
+        # st.text_area("Content", value=cleaned_data, height=500)
 
         st.write("Predicted Category:", category_name)
 
